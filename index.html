@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PixelForge | 8-Bit Studio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div class="studio-container">
+  <div class="toolbar">
+    <div class="brand">PX</div>
+    
+    <div class="tool-group">
+      <button id="tool-pencil" class="active" onclick="setTool('pencil')">
+        <i class="fas fa-pencil-alt"></i>
+      </button>
+      <button id="tool-eraser" onclick="setTool('eraser')">
+        <i class="fas fa-eraser"></i>
+      </button>
+      <button id="tool-bucket" onclick="setTool('bucket')">
+        <i class="fas fa-fill-drip"></i>
+      </button>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="color-picker-wrapper">
+      <input type="color" id="colorPicker" value="#000000">
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="action-group">
+      <button onclick="clearCanvas()" title="Clear All"><i class="fas fa-trash"></i></button>
+      <button onclick="downloadArt()" title="Download"><i class="fas fa-download"></i></button>
+    </div>
+  </div>
+
+  <div class="canvas-wrapper">
+    <canvas id="pixelCanvas" width="32" height="32"></canvas>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="info-panel">
+    Grid: 32x32 | Tool: <span id="current-tool">Pencil</span>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
