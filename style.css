@@ -1,0 +1,64 @@
+body {
+    background: #202023; font-family: 'Segoe UI', sans-serif;
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh; margin: 0; color: white;
+}
+
+.studio-container {
+    display: flex; gap: 20px; align-items: center;
+}
+
+/* TOOLBAR */
+.toolbar {
+    background: #2d2d30; padding: 15px; border-radius: 12px;
+    display: flex; flex-direction: column; gap: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.brand { 
+    font-family: 'Courier New', monospace; font-weight: bold; 
+    font-size: 24px; text-align: center; color: #ff0055; margin-bottom: 10px; 
+}
+
+button {
+    width: 45px; height: 45px; border: none; background: #3e3e42;
+    color: #ccc; border-radius: 8px; cursor: pointer;
+    font-size: 16px; transition: 0.2s;
+}
+button:hover { background: #505054; color: white; }
+button.active { background: #007acc; color: white; box-shadow: 0 0 10px #007acc; }
+
+.separator { height: 1px; background: #444; width: 100%; }
+
+input[type="color"] {
+    width: 45px; height: 45px; border: none; background: none; cursor: pointer;
+}
+
+/* CANVAS AREA */
+.canvas-wrapper {
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    border: 2px solid #444;
+    background-color: #ffffff;
+    background-image: 
+        linear-gradient(45deg, #eee 25%, transparent 25%), 
+        linear-gradient(-45deg, #eee 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #eee 75%), 
+        linear-gradient(-45deg, transparent 75%, #eee 75%);
+    background-size: 20px 20px; /* Checkerboard pattern for transparency */
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+canvas {
+    width: 512px; /* Display Size */
+    height: 512px;
+    image-rendering: pixelated; /* CRITICAL: Keeps pixels sharp */
+    cursor: crosshair;
+    display: block;
+}
+
+.info-panel {
+    position: absolute; bottom: 20px; right: 20px;
+    background: rgba(0,0,0,0.5); padding: 5px 10px;
+    border-radius: 4px; font-size: 12px; color: #888;
+}
